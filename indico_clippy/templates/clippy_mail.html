@@ -1,0 +1,10 @@
+{% extends 'emails/base.html' %}
+
+{% block subject %}Event title updated{% endblock %}
+
+{% block header_recipient %}Dear event manager{% endblock %}
+
+{% block body -%}
+    <div>The event title has been changed from {{ old_title }} to {{ new_title }}.</div>
+    <div>Your Clippy assistant</div>
+{%- endblock %}

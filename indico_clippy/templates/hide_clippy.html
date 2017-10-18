@@ -1,0 +1,11 @@
+<button class="i-button warning" id="hide">Hide clippy</button>
+<button class="i-button accept" id="show">Show clippy</button>
+<script>
+    $("#hide").click(function() {
+        window.indicoClippy.hide();
+});
+    $("#show").click(function() {
+        window.indicoClippy.show();
+        window.indicoClippy.speak("I am back!!");
+});
+</script>
