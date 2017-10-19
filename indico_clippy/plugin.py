@@ -18,15 +18,13 @@ class ClippyPlugin(IndicoPlugin):
         self.connect(signals.event.updated, self._event_changed)
         self.inject_css('clippy_css', WPEventManagement)
         self.inject_js('clippy_js', WPEventManagement)
-        self.inject_js('indico_clippy_js', WPEventManagement)
 
     def get_blueprints(self):
         return IndicoPluginBlueprint(self.name, __name__)
 
     def register_assets(self):
         self.register_css_bundle('clippy_css', 'css/clippy.css')
-        self.register_js_bundle('clippy_js', 'js/clippy.js')
-        self.register_js_bundle('indico_clippy_js', 'js/indico_clippy.js')
+        self.register_js_bundle('clippy_js', 'js/clippy.js', 'js/indico_clippy.js')
 
     def _get_clippy(self):
         return render_plugin_template('hide_clippy.html')
