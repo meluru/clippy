@@ -26,9 +26,6 @@ class ClippyPlugin(IndicoPlugin):
         self.register_css_bundle('clippy_css', 'css/clippy.css')
         self.register_js_bundle('clippy_js', 'js/clippy.js', 'js/indico_clippy.js')
 
-    def _get_clippy(self):
-        return render_plugin_template('hide_clippy.html')
-
     def _event_changed(self, event, changes, **kwargs):
         if 'title' not in changes:
             return
